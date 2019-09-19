@@ -1,0 +1,16 @@
+/' http://plantuml.com/class-diagram '/ 
+@startuml CG-N2_1
+
+title Diagrama de Classes
+footer Computação Gráfica
+
+Program : Mundo window
+Program : {static} void Main(string[] args)
+Program o-down- Mundo
+
+Mundo : + Mundo(int width, int height)
+Mundo : # override void OnLoad(EventArgs e)
+Mundo : # override void OnUpdateFrame(FrameEventArgs e)
+Mundo : # override void OnRenderFrame(FrameEventArgs e)
+
+@enduml

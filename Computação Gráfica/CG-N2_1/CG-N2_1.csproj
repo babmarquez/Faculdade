@@ -2,18 +2,16 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>CG_N2_1</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\documentação.XML</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="4.5.0" />
-    <PackageReference Include="OpenTK" Version="*" />
+    <PackageReference Include="OpenTK" Version="3.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CG_Biblioteca\CG_Biblioteca.csproj" />
   </ItemGroup>
 
 </Project>
