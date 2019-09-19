@@ -31,6 +31,7 @@ namespace OlaMundo
       base.OnLoad(e);
       GL.ClearColor(Color.Gray);
     }
+    
     protected override void OnUpdateFrame(FrameEventArgs e)
     {
       base.OnUpdateFrame(e);
