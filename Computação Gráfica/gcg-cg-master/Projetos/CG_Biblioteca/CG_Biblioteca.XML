@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CG_Biblioteca</name>
+    </assembly>
+    <members>
+        <member name="P:CG_Biblioteca.BBox.obterMenorX">
+            Obter menor valor X da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterMenorY">
+            Obter menor valor Y da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterMenorZ">
+            Obter menor valor Z da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterMaiorX">
+            Obter maior valor X da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterMaiorY">
+            Obter maior valor Y da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterMaiorZ">
+            Obter maior valor Z da BBox.
+        </member>
+        <member name="P:CG_Biblioteca.BBox.obterCentro">
+            Obter ponto do centro da BBox.
+        </member>
+        <member name="T:CG_Biblioteca.Camera">
+            <summary>
+            Classe para controlar a câmera sintética.
+            </summary>
+        </member>
+        <member name="M:CG_Biblioteca.Camera.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Construtor da classe inicializando com valores padrões
+            </summary>
+            <param name="xMin"></param>
+            <param name="xMax"></param>
+            <param name="yMin"></param>
+            <param name="yMax"></param>
+            <param name="zMin"></param>
+            <param name="zMax"></param>
+        </member>
+        <member name="T:CG_Biblioteca.Matematica">
+            <summary>
+            Classe com funções matemáticas.
+            </summary>
+        </member>
+        <member name="M:CG_Biblioteca.Matematica.ptoCirculo(System.Double,System.Double)">
+            <summary>
+            Função para calcular um ponto sobre o perímetro de um círculo informando um ângulo e raio.
+            </summary>
+            <param name="angulo"></param>
+            <param name="raio"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CG_Biblioteca.Ponto4D">
+            <summary>
+            Classe que define um ponto no espaço 3D com a coordenada homogênea (w) da Transformação Geometrica
+            </summary>
+        </member>
+        <member name="M:CG_Biblioteca.Ponto4D.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Instância um ponto 3D com a coordenada homogênea w
+            </summary>
+            <param name="x">coordenada eixo x</param>
+            <param name="y">coordenada eixo y</param>
+            <param name="z">coordenada eixo z</param>
+            <param name="w">coordenada espaço homogêneo</param>
+        </member>
+        <member name="M:CG_Biblioteca.Ponto4D.op_Addition(CG_Biblioteca.Ponto4D,CG_Biblioteca.Ponto4D)">
+            <summary>
+            
+            </summary>
+            <param name="pto1"></param>
+            <param name="pto2"></param>
+            <returns></returns>
+        </member>
+        <member name="P:CG_Biblioteca.Ponto4D.X">
+            <summary>
+            Obter e atribuir a coordenada x
+            </summary>
+            <value>coordenada x</value>
+        </member>
+        <member name="P:CG_Biblioteca.Ponto4D.Y">
+            <summary>
+            Obter e atribuir a coordenada y
+            </summary>
+            <value>coordeanda y</value>
+        </member>
+        <member name="P:CG_Biblioteca.Ponto4D.Z">
+            <summary>
+            Obter e atribuir a coordenada z
+            </summary>
+            <value>coordeanda z</value>
+        </member>
+        <member name="P:CG_Biblioteca.Ponto4D.W">
+            <summary>
+            Obter e atribuir a coordenada homogênea w
+            </summary>
+            <value>coordeanda w</value>
+        </member>
+        <member name="M:CG_Biblioteca.Ponto4D.inverterSinal">
+            <summary>
+            Inverte todos os valores das coordenadas do ponto
+            </summary>
+        </member>
+        <member name="T:CG_Biblioteca.Transformacao4D">
+            <summary>
+            Classe que define as Transformacoes Geometricas no espaco 3D
+            Uma matriz de Transformacao eh representada por uma matriz 4x4 que acumula trasnformacoes, isto eh, 
+            para aplicar as trasnformacoes T1, T2, em seguida, T3, eh necessario multiplicar T1 * T2 * T3. 
+            Os valores de Translacao estao na coluna mais a direita.
+              Organizacao dos elementos internos da Matriz
+                          [ matrix[0] matrix[4] matrix[8]  matrix[12] ]
+              Transform = [ matrix[1] matrix[5] matrix[9]  matrix[13] ]
+                          [ matrix[2] matrix[6] matrix[10] matrix[14] ]
+                          [ matrix[3] matrix[7] matrix[11] matrix[15] ]
+            </summary>
+        </member>
+        <member name="F:CG_Biblioteca.Transformacao4D.matriz">
+            \brief Cria uma matriz de Trasnformacao com uma matriz Identidade.
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirIdentidade">
+            Atribui os valores de uma matriz Identidade a matriz de Transformacao.
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirTranslacao(System.Double,System.Double,System.Double)">
+            Atribui os valores de Translacao (tx,ty,tz) a matriz de Transformacao.
+            Elemento Neutro eh 0 (zero).
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirEscala(System.Double,System.Double,System.Double)">
+            Atribui o valor de Escala (Ex,Ey,Ez) a matriz de Transformacao.
+            Elemento Neutro eh 1 (um).
+            Se manter os valores iguais de Ex,Ey e Ez o objeto vai ser reduzido ou ampliado proporcionalmente.
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirRotacaoX(System.Double)">
+            Atribui o valor de Rotacao (angulo) no eixo X a matriz de Transformacao.
+            Elemento Neutro eh 0 (zero).
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirRotacaoY(System.Double)">
+            Atribui o valor de Rotacao (angulo) no eixo Y a matriz de Transformacao.
+            Elemento Neutro eh 0 (zero).
+        </member>
+        <member name="M:CG_Biblioteca.Transformacao4D.atribuirRotacaoZ(System.Double)">
+            Atribui o valor de Rotacao (angulo) no eixo Z a matriz de Transformacao.
+            Elemento Neutro eh 0 (zero).
+        </member>
+    </members>
+</doc>
